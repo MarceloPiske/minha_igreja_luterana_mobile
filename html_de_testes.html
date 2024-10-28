@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão de Seguir</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Estilos do botão */
+        .membro-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .membro-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilos do modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+        }
+
+        .confirm-btn,
+        .cancel-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .confirm-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .cancel-btn {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="membroBtn" class="membro-btn">Tornar-se Membro</button>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Confirmar Ação</h2>
+            <p>Ao confirmar será enviada uma mensagem para a diretoria da igreja que confirmará sua solicitação.</p>
+            <button id="confirmBtn" class="confirm-btn">Confirmar</button>
+            <button id="cancelBtn" class="cancel-btn">Cancelar</button>
+        </div>
+    </div>
+
+
+    <script>
+        // Seleciona os elementos
+        const modal = document.getElementById("modal");
+        const membroBtn = document.getElementById("membroBtn");
+        const closeModal = document.getElementById("closeModal");
+        const confirmBtn = document.getElementById("confirmBtn");
+        const cancelBtn = document.getElementById("cancelBtn");
+
+        // Abre o modal quando o botão "Tornar-se Membro" é clicado
+        membroBtn.addEventListener("click", function () {
+            modal.style.display = "block";
+        });
+
+        // Fecha o modal ao clicar no botão de fechar (x)
+        closeModal.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Fecha o modal ao clicar no botão "Cancelar"
+        cancelBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Ação ao confirmar
+        confirmBtn.addEventListener("click", function () {
+            alert("Solicitação enviada à diretoria da igreja.");
+            modal.style.display = "none";
+        });
+
+        // Fecha o modal ao clicar fora dele
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+    </script>
+</body>
+
+</html>

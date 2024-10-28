@@ -1,0 +1,537 @@
+.divisor {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.divisor .line {
+    position: absolute;
+    height: .2rem;
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
+.divisor .text {
+    position: absolute;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* ========== */
+.church-content {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 4px;
+    border-radius: 0 10px 10px 0;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    gap: .5rem;
+}
+
+.image {
+    width: 25%;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    /* filter: blur(.5px); */
+}
+
+/* NOTE
+- Modal de Notificações 
+ */
+.background-modal {
+    transition: all 300ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.593);
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+}
+
+.background-modal .modal-content {
+    background-color: #fff;
+    width: 85%;
+    height: 90%;
+    opacity: 100;
+    border-radius: 10px;
+    padding: 10px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.close-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 95%;
+}
+
+.close-content span {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.background-modal .modal-content section:last-child {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background-modal .modal-content section:last-child .church-content {
+    max-width: 90%;
+}
+
+/* NOTE
+- Modal de Dados dos eventos 
+ */
+.background-modal .event-modal-content {
+    background-color: #fff;
+    width: 90%;
+    height: 95%;
+    border-radius: 10px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    font-size: larger;
+}
+
+.event-data-content {
+    background-image: url(/src/img/test_image.JPG);
+    height: 30%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.event-data-content .close-content {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+}
+
+.title-event-content {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    color: #fff;
+    padding: .7rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.date-event-content {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: .5rem;
+    border-radius: 10px;
+    transform: translate(0, 30%);
+    text-align: center;
+}
+
+.event-content {
+    padding: 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.event-content .divisor {
+    margin-top: 1rem;
+}
+
+/* NOTE dados da igreja */
+.church-data-content {
+    background-color: #fff;
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+
+    overflow: hidden;
+    position: relative;
+    font-size: larger;
+    padding-bottom: 10px;
+}
+
+.church-data-content header {
+    background-image: url(/src/img/test_image.JPG);
+    background-size: cover;
+    height: 30%;
+    max-height: 30%;
+    position: relative;
+    background-position: center;
+}
+
+.church-data-content header .close-content {
+    position: absolute;
+    top: 5%;
+    left: 1%;
+}
+
+.church-data-content header .church-social-media {
+    background-color:#004bad76; /* var(--color-primary); */
+    padding: 5px;
+    /* border-radius: 10px; */
+    border-radius: 0px;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translate(0, -50%);
+    color: #fff;
+}
+
+#follow-and-notification {
+    background-color: #004bad92;
+    padding: 5px;
+    border-radius: 10px;
+    /* font-size: xx-large; */
+    display: flex;
+    position: absolute;
+    bottom: 1%;
+    left: 2%;
+    color: #fff;
+    gap: 1rem;
+}
+
+.church-data-content header .church-name {
+    background-color: #004bad92;
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: larger;
+    position: absolute;
+    bottom: 20%;
+    left: 2%;
+}
+
+.church-data-content main {
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: calc(100% - 20px);
+    height: fit-content;
+    overflow-y: scroll;
+    height: 69%;
+    max-height: 70%;
+}
+.map-content {
+    width: calc(100% - 6px);
+    height: 450px;
+    border: 3px solid var(--color-primary);
+}
+.map-content iframe {
+    width:100%;
+    height: 100%;
+}
+
+.church-data-content main .divisor {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+main .church-contact {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    width: 100%;
+}
+main .church-contact div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color-primary);
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+    width: 75%;
+}
+
+main .pastor {
+    width: 100%;
+    max-width: calc(100% - 20px);
+    height: 20%;
+    /* max-height: 20%; */
+    min-height: max-content;
+    background-color: var(--color-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 1rem;
+}
+
+main .pastor img {
+    object-fit: cover;
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+}
+
+.church-data-content main p {
+    font-size: small;
+}
+
+.person-church, .person-pastor {
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    width: -webkit-fill-available;
+}
+#personal-data-content {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+#personal-data-content label {
+    border-top: .5px solid gray;
+    margin-top: 5px;
+    width: 100%;
+    padding-top: 5px;
+}
+#personal-data-content label:first-child {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+#dados{
+    margin-bottom: 5px;
+}
+#person-congregational-data-content {
+    width: 100%;
+}
+#person-congregational-data-content #dados h3{
+    border-top: .5px solid gray;
+    margin-top: 5px;
+    width: 100%;
+    padding-top: 5px;
+}
+#person-congregational-data-content #dados h3:first-child {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* NOTE dados do modal do pastor */
+.pastor-data-content {
+    background-color: #fff;
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+
+    overflow: hidden;
+    position: relative;
+    font-size: larger;
+    padding-bottom: 10px;
+}
+
+.pastor-data-content header {
+    background-color: var(--color-white);
+    background-size: cover;
+    height: 35%;
+    min-height: 35%;
+    max-height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 5px solid var(--color-primary);
+}
+
+.pastor-data-content header .close-content {
+    position: absolute;
+    top: 5%;
+    left: 1%;
+}
+
+.pastor-data-content header .pastor-social-media {
+    background-color: var(--color-primary);
+    padding: 5px;
+    border-radius: 10px;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translate(0, -50%);
+    color: #fff;
+}
+
+.pastor-data-content header .pastor-name {
+    background-color: var(--color-primary);
+    padding: 5px;
+    border-radius: 10px /* 10px 0 0 */;
+    color: #fff;
+    font-size: larger;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.pastor-data-content header .pastor-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.pastor-data-content header .pastor-image img{
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    border: 5px solid var(--color-primary);
+
+}
+.pastor-data-content main {
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: calc(100% - 20px);
+    overflow-y: scroll;
+    height: 64%;
+}
+.pastor-data-content main .divisor {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.follow-button.following .text {
+    content: "Seguindo";
+}
+
+/* Generic MODAL */
+
+  /* Estilos do botão */
+  .membro-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.membro-btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilos do modal */
+#generic-modal {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.generic-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+}
+
+.confirm-btn,
+.cancel-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.confirm-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+#pastor-modal {
+    height: fit-content;
+    width: 90%;
+    max-height: 60%;
+    overflow: auto;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 10px;
+    z-index: 2;
+    left: 50%;
+    top: 13%;
+    transform: translate(-50%);
+    color: var(--color-primary);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    box-shadow: var(--box-shandow);
+    gap: 10px;
+    transition: all 200ms ease;
+}

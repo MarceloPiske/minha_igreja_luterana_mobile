@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tela de Login</title>
+
+    <!-- Metatags para PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Tela de Login">
+    <meta name="application-name" content="Tela de Login">
+    <meta name="theme-color" content="#007bff">
+    <meta name="msapplication-navbutton-color" content="#007bff">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Ícones -->
+    <link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- estilos de css -->
+    <link rel="stylesheet" href="/src/styles/root.css">
+    <link rel="stylesheet" href="/src/styles/login.css">
+</head>
+
+<body>
+    <header>
+        <img src="/src/img/duas_logos.svg" alt="">
+    </header>
+    <main>
+        <div class="login-container">
+            <form id="form-login">
+                <h2>Entrar</h2>
+                <input id="email" type="email" placeholder="Email" required>
+                <input id="password" type="password" placeholder="Senha" required>
+                <button type="submit" id="but-login">Entrar</button>
+                <span id="message-error"></span>
+            </form>
+            <a href="#" class="link">Recuperar senha</a>
+            <button id="google-but" class="google-btn">
+                <img src="/src/img/google-37.png" alt="">
+                Login com Google
+            </button>
+            <button onclick="window.location.href = '/src/html/create_account.html';" class="secondary-btn">Criar
+                conta</button>
+            <a id="anonymous-but" class="link">Continuar sem login</a>
+        </div>
+    </main>
+</body>
+
+<script src="/src/scripts/firebase_user.js" type="module"></script>
+<script src="/src/scripts/login.js" type="module"></script>
+
+</html>

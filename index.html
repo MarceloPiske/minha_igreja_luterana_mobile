@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Document</title>
+
+    <!-- Metatags para PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Tela de Login">
+    <meta name="application-name" content="Tela de Login">
+    <meta name="theme-color" content="#007bff">
+    <meta name="msapplication-navbutton-color" content="#007bff">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Ícones -->
+    <link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- FONTS -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="/src/styles/root.css">
+    <link rel="stylesheet" href="/src/styles/search.css">
+    <link rel="stylesheet" href="/src/styles/event.css">
+    <link rel="stylesheet" href="/src/styles/utils.css">
+
+    <!-- SCRIPTS -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKgP_fNsQaUk8lJ8Z_vGgt31Qad07Jdpg"></script>
+</head>
+
+<body>
+    <!-- <div class="background-modal">
+        
+    </div> -->
+
+    <header id="principal-header">
+        <div id="header-content">
+
+        </div>
+    </header>
+    <main>
+        <div id="pages-container">
+            <nav class="page-select">
+
+            </nav>
+            <div class="content">
+
+            </div>
+        </div>
+    </main>
+    <nav class="prinpal_nav">
+        <div class="navbar">
+            <a href="#">
+                <span id='search' onclick="drawning_search(this.id)" class="material-symbols-sharp">search</span>
+            </a>
+            <a href="#">
+                <span id='church' onclick="drawning_church_events(this.id)" class="material-symbols-sharp">church</span>
+            </a>
+            <a href="#">
+                <span id='pastor' onclick="drawning_pastor_events(this.id)" class="material-symbols-sharp">face</span>
+            </a>
+            <a href="#">
+                <span id='person' onclick="drawning_person_events(this.id)" class="material-symbols-sharp">person</span>
+            </a>
+        </div>
+    </nav>
+</body>
+<script src="/src/scripts/drawning_scripts.js" type="module"></script>
+<script src="/src/scripts/utils.js" type="module"></script>
+<script src="/src/scripts/modais_script.js" type="module"></script>
+<script src="/src/scripts/index.js" type="module"></script>
+<script src="/src/scripts/google_maps.js"></script>
+
+<!-- <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyClQU3sNkdx3yRrFsuR9Q-dh0PI8z2apYc",
+      authDomain: "minha-igreja-luterana-mobile.firebaseapp.com",
+      projectId: "minha-igreja-luterana-mobile",
+      storageBucket: "minha-igreja-luterana-mobile.appspot.com",
+      messagingSenderId: "241577367376",
+      appId: "1:241577367376:web:667f47a1b232adeb30fe55",
+      measurementId: "G-PS0SCBV5Z1"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script> -->
+<script type="module" src="/src/scripts/firebase_user.js"></script>
+<script type="module" src="/src/scripts/firebase_firestorage.js"></script>
+
+</html>

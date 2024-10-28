@@ -1,0 +1,202 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+header {
+    overflow: hidden;
+    height: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+main {
+    transition: all 300ms ease;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 93%;
+    max-height: 93%;
+}
+
+.on-header main {
+    max-height: 80%;
+    height: 80%;
+}
+
+.on-header header {
+    opacity: 100;
+    max-height: 13%;
+    height: 13%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.on-header header #header-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#pages-container {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main .page-select {
+    transition: all 300ms ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: calc(95%);
+    height: 5%;
+}
+
+main .page-select div {
+    overflow: hidden;
+    transition: all 300ms ease;
+    padding: 5px;
+    border: 1px solid var(--color-white);
+    border-radius: var(--border-radius-1) var(--border-radius-1) 0 0;
+}
+
+main .page-select .active-page {
+    background-color: var(--color-white);
+    /* padding: 10px; */
+    font-size: large;
+    z-index: 1;
+    transform: translate(0px, 1px);
+    border: 0;
+}
+
+main .page-select .active-page a {
+    font-weight: bolder;
+    color: var(--color-primary);
+}
+
+main .page-select div a {
+    color: var(--color-white);
+}
+
+main .content {
+    height: calc(95% - 2 * var(--padding-1));
+    width: calc(95% - 2 * var(--padding-1));
+    background-color: var(--color-white);
+    padding: var(--padding-1);
+    border-radius: 0 var(--card-border-radius) var(--card-border-radius) var(--card-border-radius);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+main #filter-and-order {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    width: 95%;
+    height: 5%;
+    gap: .5rem;
+}
+
+.filter-container {
+    width: -webkit-fill-available;
+    padding: 5px 5px 5px 10px;
+    margin: 10px 0;
+    border: 1px solid var(--color-primary);
+    border-radius: 1rem;
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-primary);
+}
+
+.filter-container input[type="text"] {
+    width:  -webkit-fill-available;
+}
+
+#order-container {
+    padding: 5px;
+    border-radius: .5rem;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#order-container span {
+    margin: 0;
+}
+
+body .prinpal_nav {
+    max-height: 7%;
+    height: 7%;
+    width: 100%;
+}
+
+.no-page-select {
+    transition: all 300ms ease;
+}
+
+.no-page-select .page-select {
+    height: 0;
+}
+
+.no-page-select .content {
+    height: 100%;
+    max-height: 100%;
+    border-radius: var(--card-border-radius);
+}
+
+#menu-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+.search-input-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+#churches,
+#pastors {
+    padding: 10px;
+    border: 1px solid var(--color-white);
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.actived-menu {
+    border: 1px solid var(--color-white) !important;
+    background-color: var(--color-white) !important;
+    color: var(--color-primary) !important;
+    font-size: x-large !important;
+}
+

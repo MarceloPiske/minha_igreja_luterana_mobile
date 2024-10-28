@@ -1,0 +1,176 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição de Membros da Igreja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            transition: border-color 0.25s;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="date"]:focus, input[type="file"]:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .checkbox-label {
+            margin-bottom: 15px;
+            display: block;
+            cursor: pointer;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.25s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="churchMemberForm">
+        <h1>Inscrição de Membro</h1>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="last_name">Sobrenome:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" required>
+
+        <label for="street">Rua:</label>
+        <input type="text" id="street" name="street" required>
+
+        <label for="number">Número:</label>
+        <input type="text" id="number" name="number" required>
+
+        <label for="neighborhood">Bairro:</label>
+        <input type="text" id="neighborhood" name="neighborhood" required>
+
+        <label for="city">Cidade:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">Estado:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zip_code">CEP:</label>
+        <input type="text" id="zip_code" name="zip_code" required>
+
+        <label for="occupation">Ocupação:</label>
+        <input type="text" id="occupation" name="occupation">
+
+        <label for="phone">Telefone:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="baptism_date">Data de Batismo:</label>
+        <input type="date" id="baptism_date" name="baptism_date" required>
+
+        <label for="births_date">Data de Nascimento:</label>
+        <input type="date" id="births_date" name="births_date" required>
+
+        <label for="image_path">Foto:</label>
+        <input type="file" id="image_path" name="image_path" accept="image/*">
+
+        <label class="checkbox-label"><input type="checkbox" id="confirmed" name="confirmed"> Confirmado</label>
+
+        <label class="checkbox-label"><input type="checkbox" id="communicant" name="communicant"> Comungante</label>
+
+        <label class="checkbox-label"><input type="checkbox" id="married" name="married"> Casado</label>
+
+        <label for="remarks">Observações:</label>
+        <textarea id="remarks" name="remarks" rows="4"></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('churchMemberForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = {
+                address: {
+                    street: formData.get('street'),
+                    number: formData.get('number'),
+                    neighborhood: formData.get('neighborhood'),
+                    city: formData.get('city'),
+                    state: formData.get('state'),
+                    zip_code: formData.get('zip_code')
+                },
+                confirmed: formData.has('confirmed'),
+                communicant: formData.has('communicant'),
+                married: formData.has('married'),
+                image_path: formData.get('image_path'),
+                baptism_date: {
+                    seconds: new Date(formData.get('baptism_date')).getTime() / 1000,
+                    nanoseconds: 0
+                },
+                births_date: {
+                    seconds: new Date(formData.get('births_date')).getTime() / 1000,
+                    nanoseconds: 0
+                },
+                last_name: formData.get('last_name'),
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                occupation: formData.get('occupation'),
+                cpf: formData.get('cpf'),
+                remarks: formData.get('remarks')
+            };
+            //console.log('Form data:', data);
+
+            // Aqui você pode adicionar um AJAX para enviar os dados para o servidor
+        });
+    </script>
+
+</body>
+</html>

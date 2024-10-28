@@ -1,0 +1,111 @@
+/* ##### ROOT ########## */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap');
+
+/* ========== ROOT VARIABLES ========== */
+
+:root {
+    --color-primary: #004aad;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-ligth: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #0975F9;
+    --color-dark-variant: #677483;
+    --color-background: #004aad;
+
+    --card-border-radius: 1.5rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.5rem;
+    --padding-1: 1.2rem;
+
+    --box-shandow: 0 2rem 3rem var(--color-ligth);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    /* box-sizing: 0; */
+}
+
+html {
+    font-size: 14px;
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;
+}
+
+body {
+    max-width: 100vw;
+    max-height: 100%;
+    height: 100%;
+    min-height: 100%;
+    font-family: poppins, sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow: hidden;
+}
+
+input[type="checkbox"] {
+    appearance: auto;
+}
+/* ======= NAV ======= */
+/*NOTE REGRAS PARA UTILIZAÇÂO DA "NAV"
+ - 
+ - 
+ - 
+*/
+.prinpal_nav{
+    background: var(--color-white);
+    width: 100vw;
+}
+.prinpal_nav .navbar {
+    text-align: center;
+    height: 100%;
+    display: flex;
+}
+
+.prinpal_nav .navbar a {
+    transition: all 300ms ease;
+    color: var(--color-primary);
+    position: relative;
+    margin: auto;
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prinpal_nav .navbar a span{
+    font-size: xx-large;
+    transition: all 300ms ease;
+    max-width: 50%;
+}
+
+.prinpal_nav .navbar .active-bar {
+    /* scale: 1.2; */
+    font-size: xxx-large;
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translate(0, -2rem);
+    border: 1px solid var(--color-white);
+}
+/* ======= NAV ======= */
